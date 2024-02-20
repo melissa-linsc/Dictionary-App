@@ -1,0 +1,94 @@
+
+
+html {
+    font-size: 16px;
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background-color: plum;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.container {
+    background-color: white;
+    width: 30rem;
+    padding: 5rem 3rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 2.5rem 3rem rgba(38, 33, 61, 0.3);
+}
+
+.search {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search input {
+    padding: 0.5rem;
+    width: 70%;
+    border: none;
+    outline: none;
+    border-bottom: 0.2rem solid plum;
+}
+
+.search button {
+    padding: 1rem 0;
+    width: 25%;
+    background-color: plum;
+    border: none;
+    outline: none;
+    color: white;
+    border-radius: 0.8rem;
+}
+
+.result {
+    position: relative;
+}
+
+.result h3 {
+    font-size: 2.5rem;
+    color: grey;
+}
+
+.result .word {
+    display:flex;
+    justify-content: space-between;
+    margin-top: 5rem;
+}
+
+.result button {
+    background-color: transparent;
+    color: plum;
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+}
+
+.result .details {
+    display: flex;
+    gap: 1rem;
+    color: plum;
+    margin: 0.5rem 0 1rem 0;
+    font-size: 1rem;
+}
+
+.definition {
+    color: grey;
+}
+
+.word-example {
+    color: grey;
+    font-style: italic;
+    border-left: 0.5rem solid plum;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+
+
