@@ -17,8 +17,6 @@ btn.addEventListener('click', () => {
                 <h3>${inputWord}</h3>
                 <button onclick='playSound()' id='sound-btn'>
                     <i class="fa-solid fa-volume-high"></i>
-                <button onclick='playSound()' id='sound-btn'>
-                    <i class="fa-solid fa-volume-high" id='sound-icon'></i>
                 </button>
             </div>
             <div class="details">
