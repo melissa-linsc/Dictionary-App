@@ -15,13 +15,13 @@ btn.addEventListener('click', () => {
         result.innerHTML = `
         <div class="word">
                 <h3>${inputWord}</h3>
-                <button onclick='playSound()'>
-                    <i class="fa-solid fa-volume-high" id='sound-icon'></i>
+                <button onclick='playSound()' id='sound-btn'>
+                    <i class="fa-solid fa-volume-high"></i>
                 </button>
             </div>
             <div class="details">
                 <p>${data[0].meanings[0].partOfSpeech}</p>
-                <p>${data[0].phonetics[0].text}</p>
+                <p id='phonetic'>${data[0].phonetics[0].text}</p>
             </div>
             <p class="definition">
                 1. ${data[0].meanings[0].definitions[0].definition}
@@ -30,13 +30,28 @@ btn.addEventListener('click', () => {
                 ${data[0].meanings[0].definitions[0].example}
             </p>`;
 
+        const example = document.getElementById('word-example')
+        if (data[0].meanings[0].definitions[0].example == null) {
+            example.innerHTML = 'No Example Found.'
+        }
+
+        const phonetic = document.getElementById('phonetic')
+        if (data[0].phonetics[0].text == null ) {
+            phonetic.innerHTML = ''
+        }
+
+        const soundBtn = document.getElementById('sound-btn')
         if ( data[0].phonetics[0].audio != '') {
             sound.setAttribute('src',`${data[0].phonetics[0].audio}`)
             console.log(sound)
         }
-        else {
+        else if ( data[0].phonetics[1].audio != '') {
             sound.setAttribute('src',`${data[0].phonetics[1].audio}`)
             console.log(sound)
+        }
+        else {
+            soundBtn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>'
+            sound.setAttribute('src',``)
         }
   
     })
