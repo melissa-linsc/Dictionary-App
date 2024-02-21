@@ -18,7 +18,7 @@ body {
 .container {
     background-color: white;
     width: 30rem;
-    padding: 5rem 3rem;
+    padding: 1.5rem 3rem 4rem 3rem;
     border-radius: 1.5rem;
     box-shadow: 0 2.5rem 3rem rgba(38, 33, 61, 0.3);
 }
@@ -27,6 +27,7 @@ body {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    margin-top: 2rem;
 }
 
 .search input {
@@ -45,6 +46,7 @@ body {
     outline: none;
     color: white;
     border-radius: 0.8rem;
+    font-size: 1rem;
 }
 
 .result {
@@ -90,5 +92,78 @@ body {
     margin-top: 2rem;
 }
 
+label {
+    width: 5rem;
+    height: 2.5rem;
+    position: relative;
+    display: block;
+    background: plum;
+    border-radius: 12.5rem;
+    box-shadow: inset 0 0.2rem 0.2rem rgba(0,0,0,0.4), inset 0 -0.2rem 0.2rem rgba(255,255,255,0.4);
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 1rem;
+}
 
+label:after {
+    content: '';
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: 0.25rem;
+    left: 0.4rem;
+    background: white;
+    border-radius: 12.5rem;
+    box-shadow: 0 0.1rem 0.1rem rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
 
+#darkmode-toggle {
+    width: 5rem;
+    height: 2rem;
+    position: absolute;
+    display: flex;
+    z-index: 10; 
+    opacity: 0;
+}
+    
+#darkmode-toggle:checked + label {
+    background: plum;
+}
+
+#darkmode-toggle:checked + label:after {
+    left: 4.5rem;
+    transform: translateX(-100%);
+    background: #242424;
+}
+
+#sun, #moon {
+    position: absolute;
+    height: 1.5rem;
+    top: 0.5rem;
+    z-index: 5;
+}
+
+#sun {
+    left: 0.65rem;
+    fill: plum;
+    transition: 0.1s;
+    visibility: hidden;
+}
+
+#moon {
+    left: 3rem;
+    fill: white;
+    transition: 0.1s;
+    visibility: visible;
+}
+
+#darkmode-toggle:checked + label #sun {
+    fill: #242424;
+    visibility: visible;
+}
+
+#darkmode-toggle:checked + label #moon {
+    fill: plum;
+    visibility: hidden;
+}
